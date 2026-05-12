@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Backend Developer & AI Enthusiast</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">✦ dev.portfolio</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <!-- Decorative blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow">✦ Welcome to my world</p>
+      <h1 class="hero-name">
+        <span class="hero-name-line">Backend</span>
+        <span class="hero-name-line italic">Developer</span>
+        <span class="hero-name-line">&amp; AI Enthusiast</span>
+      </h1>
+      <p class="hero-sub">
+        Crafting elegant, scalable systems behind beautiful products.<br />
+        Based in Kathmandu · Working at Ekbana Solutions
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+
+    <!-- Floating badge -->
+    <div class="hero-badge">
+      <svg viewBox="0 0 100 100" class="badge-ring"><path id="badgePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/><text><textPath href="#badgePath">Node.js · NestJS · TypeScript · PostgreSQL ·&nbsp;</textPath></text></svg>
+      <span class="badge-center">✦</span>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#about" class="scroll-cue">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-label">01 · About Me</div>
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <div class="about-photo-frame">
+            <div class="about-photo-inner">
+              <!-- Decorative initials -->
+              <span class="photo-monogram">BD</span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Cups of Tea</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <h2 class="section-heading">Turning complex logic<br /><em>into graceful code</em></h2>
+          <p class="about-text">
+            I'm a backend developer who finds beauty in clean architecture and scalable systems. Currently at <strong>Ekbana Solutions</strong>, I build enterprise-level applications that power real-world operations — from employee management to disaster response.
+          </p>
+          <p class="about-text">
+            My passion lies at the intersection of <strong>software engineering</strong> and <strong>artificial intelligence</strong> — creating systems that don't just work, but think. I believe code should be as thoughtful and intentional as the problems it solves.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Problem Solver</span>
+            <span class="tag">System Architect</span>
+            <span class="tag">AI Explorer</span>
+            <span class="tag">Team Player</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label">02 · Tech Stack</div>
+      <h2 class="section-heading center">Tools I craft with</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card" data-delay="0">
+          <div class="skill-icon">⬡</div>
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>NestJS</li>
+            <li>TypeScript</li>
+            <li>REST APIs</li>
+            <li>GraphQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-delay="100">
+          <div class="skill-icon">◈</div>
+          <h3>Database</h3>
+          <ul>
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>TypeORM</li>
+            <li>Redis</li>
+            <li>Prisma</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-delay="200">
+          <div class="skill-icon">✧</div>
+          <h3>AI &amp; Tools</h3>
+          <ul>
+            <li>OpenAI APIs</li>
+            <li>Graph Theory</li>
+            <li>Jest Testing</li>
+            <li>Docker</li>
+            <li>Git / CI-CD</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-delay="300">
+          <div class="skill-icon">◯</div>
+          <h3>Architecture</h3>
+          <ul>
+            <li>Microservices</li>
+            <li>Clean Architecture</li>
+            <li>DDD Patterns</li>
+            <li>Event-Driven</li>
+            <li>API Design</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Marquee tech bar -->
+      <div class="tech-marquee-wrap">
+        <div class="tech-marquee">
+          <span>Node.js</span><span>✦</span>
+          <span>NestJS</span><span>✦</span>
+          <span>TypeScript</span><span>✦</span>
+          <span>PostgreSQL</span><span>✦</span>
+          <span>MySQL</span><span>✦</span>
+          <span>TypeORM</span><span>✦</span>
+          <span>Jest</span><span>✦</span>
+          <span>Docker</span><span>✦</span>
+          <span>REST APIs</span><span>✦</span>
+          <span>Redis</span><span>✦</span>
+          <!-- Duplicate for seamless loop -->
+          <span>Node.js</span><span>✦</span>
+          <span>NestJS</span><span>✦</span>
+          <span>TypeScript</span><span>✦</span>
+          <span>PostgreSQL</span><span>✦</span>
+          <span>MySQL</span><span>✦</span>
+          <span>TypeORM</span><span>✦</span>
+          <span>Jest</span><span>✦</span>
+          <span>Docker</span><span>✦</span>
+          <span>REST APIs</span><span>✦</span>
+          <span>Redis</span><span>✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-label">03 · Work Experience</div>
+      <h2 class="section-heading">Where I've <em>grown</em></h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 — Present</div>
+          <div class="timeline-card">
+            <h3>Backend Developer</h3>
+            <h4>Ekbana Solutions · Kathmandu, Nepal</h4>
+            <p>Building enterprise-grade backend systems that power critical operations. Leading API design and database architecture decisions for large-scale applications.</p>
+            <ul class="timeline-list">
+              <li>Developed TTC Employee Management System (NestJS + PostgreSQL)</li>
+              <li>Built Disaster Evacuation &amp; Shelter Management System</li>
+              <li>Designed scalable microservice architectures</li>
+              <li>Implemented comprehensive Jest test suites ensuring system reliability</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>NestJS</span><span>PostgreSQL</span><span>TypeScript</span><span>TypeORM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022 — 2023</div>
+          <div class="timeline-card">
+            <h3>Junior Backend Developer</h3>
+            <h4>Freelance &amp; Academic Projects · Nepal</h4>
+            <p>Developed full-stack web applications and REST APIs while exploring AI integrations and IoT systems. Built a foundation in clean code practices and backend architecture.</p>
+            <ul class="timeline-list">
+              <li>REST API design and implementation</li>
+              <li>Database schema design and optimization</li>
+              <li>IoT system integration with Arduino</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Node.js</span><span>MySQL</span><span>Arduino</span><span>APIs</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label">04 · Featured Projects</div>
+      <h2 class="section-heading">Things I've <em>built</em></h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card featured reveal">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-tag">AI · Food Tech</div>
+            <h3>Tastebuds</h3>
+            <p>An AI-powered food recommendation app that suggests restaurants and dishes based on preferences, with route optimization using graph theory algorithms for the most efficient dining journeys.</p>
+            <ul class="project-features">
+              <li>AI-powered personalized food recommendations</li>
+              <li>Graph-based route optimization engine</li>
+              <li>Real-time restaurant data integration</li>
+            </ul>
+            <div class="project-tech">
+              <span>Node.js</span><span>AI APIs</span><span>Graph Theory</span><span>PostgreSQL</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-visual-inner">
+              <span class="project-emoji">🍜</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-tag">Health · Awareness</div>
+            <h3>NourishMind</h3>
+            <p>An eating disorder awareness and resource platform designed to destigmatize mental health conversations around food and body image, providing educational content and support resources.</p>
+            <div class="project-tech">
+              <span>TypeScript</span><span>REST API</span><span>PostgreSQL</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-visual-inner">
+              <span class="project-emoji">🌿</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-tag">IoT · Smart City</div>
+            <h3>Smart Urban Waste Management</h3>
+            <p>An IoT-powered waste management system for Kathmandu using Arduino sensors to monitor bin fill levels in real-time, optimizing collection routes and reducing urban waste inefficiency.</p>
+            <div class="project-tech">
+              <span>Arduino</span><span>IoT</span><span>Node.js</span><span>MySQL</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-visual-inner">
+              <span class="project-emoji">♻️</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-number">04</div>
+          <div class="project-content">
+            <div class="project-tag">Enterprise · NestJS</div>
+            <h3>TTC Employee Management System</h3>
+            <p>Enterprise-level employee management platform with role-based access control, attendance tracking, payroll integration, and comprehensive reporting built for TTC organization.</p>
+            <div class="project-tech">
+              <span>NestJS</span><span>PostgreSQL</span><span>TypeORM</span><span>Jest</span>
+            </div>
+          </div>
+          <div class="project-visual">
+            <div class="project-visual-inner">
+              <span class="project-emoji">🏢</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-label">05 · Education</div>
+      <h2 class="section-heading">My <em>academic</em> journey</h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon">◈</div>
+          <div class="edu-content">
+            <span class="edu-year">2020 — 2024</span>
+            <h3>Bachelor of Computer Science</h3>
+            <h4>Tribhuvan University · Kathmandu, Nepal</h4>
+            <p>Focused on software engineering, algorithms, data structures, and AI fundamentals. Graduated with strong academic standing.</p>
+          </div>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-icon">✧</div>
+          <div class="edu-content">
+            <span class="edu-year">Continuous</span>
+            <h3>Self-Directed Learning</h3>
+            <h4>Online Courses &amp; Certifications</h4>
+            <p>NestJS advanced patterns, AI/ML foundations, system design, cloud architecture, and open-source contributions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="blob blob-4"></div>
+    <div class="container">
+      <div class="section-label">06 · Contact</div>
+      <h2 class="section-heading center">Let's build something<br /><em>beautiful together</em></h2>
+      <p class="contact-sub">Open to exciting opportunities, collaborations, and conversations about tech &amp; AI.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">◎</span>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:hello@devportfolio.com" class="contact-value">hello@devportfolio.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">◎</span>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Kathmandu, Nepal 🇳🇵</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">◎</span>
+            <div>
+              <span class="contact-label">Availability</span>
+              <span class="contact-value contact-available">Open to opportunities</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <span class="btn-icon">✦</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✦ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        Designed &amp; built with <span class="heart">♡</span> · Kathmandu 2025
+      </p>
+      <p class="footer-copy">✦ Backend Developer &amp; AI Enthusiast</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
