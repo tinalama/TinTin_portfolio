@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +9,11 @@
   <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <!-- ===== CURSOR ===== -->
@@ -32,88 +36,118 @@
     </ul>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <!-- Decorative blobs -->
+  <!-- ===== HERO + ABOUT (merged seamless section) ===== -->
+  <section class="hero-about" id="hero">
+    <!-- Ambient blobs -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
-    <div class="hero-inner">
-      <p class="hero-eyebrow">✦ Welcome to my world</p>
-      <h1 class="hero-name">
-        <span class="hero-name-line">Backend</span>
-        <span class="hero-name-line italic">Developer</span>
-        <span class="hero-name-line">&amp; AI Enthusiast</span>
-      </h1>
-      <p class="hero-sub">
-        Crafting elegant, scalable systems behind beautiful products.<br />
-        Based in Kathmandu · Working at Ekbana Solutions
-      </p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    <!-- ── TOP: HERO INTRO ── -->
+    <div class="ha-intro container">
+      <div class="ha-intro-left">
+        <p class="hero-eyebrow">✦ Welcome to my world</p>
+        <h1 class="hero-name">
+          <span class="hero-name-line">I build things as a</span>
+          <span class="hero-name-line italic" id="typewriterLine">&nbsp;</span>
+        </h1>
+        <p class="hero-sub">
+          Crafting elegant, scalable systems<br />behind beautiful products.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+          <a href="#" class="btn btn-cv" download aria-label="Download CV">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            CV
+          </a>
+        </div>
+      </div>
+
+      <div class="ha-intro-right">
+        <!-- Photo frame -->
+        <div class="about-photo-frame">
+          <div class="about-photo-inner">
+            <span class="photo-monogram">BD</span>
+          </div>
+        </div>
+        <!-- Floating badge around the frame -->
+        <div class="hero-badge">
+          <svg viewBox="0 0 160 160" class="badge-ring">
+            <path id="badgePath" d="M 80,80 m -62,0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" />
+            <text>
+              <textPath href="#badgePath" startOffset="0%">NestJS &nbsp;✦&nbsp; TypeScript &nbsp;✦&nbsp; PostgreSQL
+                &nbsp;✦&nbsp; Node.js &nbsp;✦&nbsp; </textPath>
+            </text>
+          </svg>
+          <span class="badge-center">✦</span>
+        </div>
       </div>
     </div>
 
-    <!-- Floating badge -->
-    <div class="hero-badge">
-      <svg viewBox="0 0 100 100" class="badge-ring"><path id="badgePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/><text><textPath href="#badgePath">Node.js · NestJS · TypeScript · PostgreSQL ·&nbsp;</textPath></text></svg>
-      <span class="badge-center">✦</span>
+    <!-- ── DIVIDER WAVE ── -->
+    <div class="ha-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="rgba(252,232,239,0.55)" />
+      </svg>
+    </div>
+
+    <!-- ── BOTTOM: ABOUT STRIP ── -->
+    <div id="about" class="ha-about container">
+      <!-- Quick bio -->
+      <div class="ha-bio">
+        <span class="section-label">01 · About Me</span>
+        <p class="about-text">
+          I'm a backend developer who finds beauty in clean architecture and scalable systems.
+          Currently at <strong>Ekbana Solutions</strong>, I build enterprise-level applications
+          that power real-world operations — from employee management to disaster response.
+        </p>
+        <p class="about-text">
+          My passion lives at the intersection of <strong>software engineering</strong> and
+          <strong>artificial intelligence</strong> — creating systems that don't just work, but think.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Problem Solver</span>
+          <span class="tag">System Architect</span>
+          <span class="tag">AI Explorer</span>
+          <span class="tag">Team Player</span>
+        </div>
+      </div>
+
+      <!-- Vertical separator -->
+      <div class="ha-sep" aria-hidden="true"></div>
+
+      <!-- Stats -->
+      <div class="ha-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="2">0</span><span class="stat-num">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="10">0</span><span class="stat-num">+</span>
+          <span class="stat-label">Projects Shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Cups of Tea</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="5">0</span><span class="stat-num">+</span>
+          <span class="stat-label">Tech Stacks</span>
+        </div>
+      </div>
     </div>
 
     <!-- Scroll cue -->
-    <a href="#about" class="scroll-cue">
+    <a href="#skills" class="scroll-cue">
       <span>scroll</span>
       <div class="scroll-line"></div>
     </a>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-label">01 · About Me</div>
-      <div class="about-grid">
-        <div class="about-photo-wrap">
-          <div class="about-photo-frame">
-            <div class="about-photo-inner">
-              <!-- Decorative initials -->
-              <span class="photo-monogram">BD</span>
-            </div>
-          </div>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">10+</span>
-              <span class="stat-label">Projects Shipped</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">∞</span>
-              <span class="stat-label">Cups of Tea</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-content">
-          <h2 class="section-heading">Turning complex logic<br /><em>into graceful code</em></h2>
-          <p class="about-text">
-            I'm a backend developer who finds beauty in clean architecture and scalable systems. Currently at <strong>Ekbana Solutions</strong>, I build enterprise-level applications that power real-world operations — from employee management to disaster response.
-          </p>
-          <p class="about-text">
-            My passion lies at the intersection of <strong>software engineering</strong> and <strong>artificial intelligence</strong> — creating systems that don't just work, but think. I believe code should be as thoughtful and intentional as the problems it solves.
-          </p>
-          <div class="about-tags">
-            <span class="tag">Problem Solver</span>
-            <span class="tag">System Architect</span>
-            <span class="tag">AI Explorer</span>
-            <span class="tag">Team Player</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ===== SKILLS ===== -->
@@ -217,7 +251,8 @@
           <div class="timeline-card">
             <h3>Backend Developer</h3>
             <h4>Ekbana Solutions · Kathmandu, Nepal</h4>
-            <p>Building enterprise-grade backend systems that power critical operations. Leading API design and database architecture decisions for large-scale applications.</p>
+            <p>Building enterprise-grade backend systems that power critical operations. Leading API design and database
+              architecture decisions for large-scale applications.</p>
             <ul class="timeline-list">
               <li>Developed TTC Employee Management System (NestJS + PostgreSQL)</li>
               <li>Built Disaster Evacuation &amp; Shelter Management System</li>
@@ -236,7 +271,8 @@
           <div class="timeline-card">
             <h3>Junior Backend Developer</h3>
             <h4>Freelance &amp; Academic Projects · Nepal</h4>
-            <p>Developed full-stack web applications and REST APIs while exploring AI integrations and IoT systems. Built a foundation in clean code practices and backend architecture.</p>
+            <p>Developed full-stack web applications and REST APIs while exploring AI integrations and IoT systems.
+              Built a foundation in clean code practices and backend architecture.</p>
             <ul class="timeline-list">
               <li>REST API design and implementation</li>
               <li>Database schema design and optimization</li>
@@ -265,7 +301,8 @@
           <div class="project-content">
             <div class="project-tag">AI · Food Tech</div>
             <h3>Tastebuds</h3>
-            <p>An AI-powered food recommendation app that suggests restaurants and dishes based on preferences, with route optimization using graph theory algorithms for the most efficient dining journeys.</p>
+            <p>An AI-powered food recommendation app that suggests restaurants and dishes based on preferences, with
+              route optimization using graph theory algorithms for the most efficient dining journeys.</p>
             <ul class="project-features">
               <li>AI-powered personalized food recommendations</li>
               <li>Graph-based route optimization engine</li>
@@ -273,6 +310,10 @@
             </ul>
             <div class="project-tech">
               <span>Node.js</span><span>AI APIs</span><span>Graph Theory</span><span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub ↗</a>
+              <a href="#" class="project-link project-link-demo">Live Demo ↗</a>
             </div>
           </div>
           <div class="project-visual">
@@ -287,10 +328,12 @@
           <div class="project-content">
             <div class="project-tag">Health · Awareness</div>
             <h3>NourishMind</h3>
-            <p>An eating disorder awareness and resource platform designed to destigmatize mental health conversations around food and body image, providing educational content and support resources.</p>
+            <p>An eating disorder awareness and resource platform designed to destigmatize mental health conversations
+              around food and body image, providing educational content and support resources.</p>
             <div class="project-tech">
               <span>TypeScript</span><span>REST API</span><span>PostgreSQL</span>
             </div>
+            <div class="project-links"><a href="#" class="project-link">GitHub ↗</a></div>
           </div>
           <div class="project-visual">
             <div class="project-visual-inner">
@@ -304,10 +347,12 @@
           <div class="project-content">
             <div class="project-tag">IoT · Smart City</div>
             <h3>Smart Urban Waste Management</h3>
-            <p>An IoT-powered waste management system for Kathmandu using Arduino sensors to monitor bin fill levels in real-time, optimizing collection routes and reducing urban waste inefficiency.</p>
+            <p>An IoT-powered waste management system for Kathmandu using Arduino sensors to monitor bin fill levels in
+              real-time, optimizing collection routes and reducing urban waste inefficiency.</p>
             <div class="project-tech">
               <span>Arduino</span><span>IoT</span><span>Node.js</span><span>MySQL</span>
             </div>
+            <div class="project-links"><a href="#" class="project-link">GitHub ↗</a></div>
           </div>
           <div class="project-visual">
             <div class="project-visual-inner">
@@ -321,10 +366,12 @@
           <div class="project-content">
             <div class="project-tag">Enterprise · NestJS</div>
             <h3>TTC Employee Management System</h3>
-            <p>Enterprise-level employee management platform with role-based access control, attendance tracking, payroll integration, and comprehensive reporting built for TTC organization.</p>
+            <p>Enterprise-level employee management platform with role-based access control, attendance tracking,
+              payroll integration, and comprehensive reporting built for TTC organization.</p>
             <div class="project-tech">
               <span>NestJS</span><span>PostgreSQL</span><span>TypeORM</span><span>Jest</span>
             </div>
+            <div class="project-links"><a href="#" class="project-link">GitHub ↗</a></div>
           </div>
           <div class="project-visual">
             <div class="project-visual-inner">
@@ -350,7 +397,8 @@
             <span class="edu-year">2020 — 2024</span>
             <h3>Bachelor of Computer Science</h3>
             <h4>Tribhuvan University · Kathmandu, Nepal</h4>
-            <p>Focused on software engineering, algorithms, data structures, and AI fundamentals. Graduated with strong academic standing.</p>
+            <p>Focused on software engineering, algorithms, data structures, and AI fundamentals. Graduated with strong
+              academic standing.</p>
           </div>
         </div>
         <div class="edu-card reveal">
@@ -359,7 +407,8 @@
             <span class="edu-year">Continuous</span>
             <h3>Self-Directed Learning</h3>
             <h4>Online Courses &amp; Certifications</h4>
-            <p>NestJS advanced patterns, AI/ML foundations, system design, cloud architecture, and open-source contributions.</p>
+            <p>NestJS advanced patterns, AI/ML foundations, system design, cloud architecture, and open-source
+              contributions.</p>
           </div>
         </div>
       </div>
@@ -416,7 +465,8 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <span>Send Message</span>
@@ -426,6 +476,44 @@
             ✦ Message sent! I'll get back to you soon.
           </div>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GRAIN TEXTURE OVERLAY ===== -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section testimonial" id="testimonial">
+    <div class="container">
+      <div class="section-label">07 · Kind Words</div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">❝</div>
+          <p>"An exceptionally thoughtful developer who brings both technical precision and creative problem-solving to
+            every project. Their backend architecture work on our enterprise systems was clean, scalable, and delivered
+            ahead of schedule."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EK</div>
+            <div>
+              <strong>Engineering Lead</strong>
+              <span>Ekbana Solutions</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" data-delay="120">
+          <div class="testimonial-quote">❝</div>
+          <p>"Their ability to translate complex requirements into elegant API design is rare. The NestJS architecture
+            they designed became the backbone of our entire platform — robust, well-tested, and a joy to build on top
+            of."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TM</div>
+            <div>
+              <strong>Project Manager</strong>
+              <span>TTC Nepal</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -442,4 +530,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
