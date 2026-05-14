@@ -22,7 +22,7 @@
 
   <!-- ===== NAV ===== -->
   <nav class="nav" id="nav">
-    <a href="#hero" class="nav-logo">✦ dev.portfolio</a>
+    <a href="#hero" class="nav-logo">✦ tina.dev</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -46,18 +46,20 @@
     <!-- ── TOP: HERO INTRO ── -->
     <div class="ha-intro container">
       <div class="ha-intro-left">
-        <p class="hero-eyebrow">✦ Welcome to my world</p>
+        <p class="hero-eyebrow"><span class="ey-word">Welcome to my world</span> <span class="ey-dot">·</span> <span
+            class="ey-word">Based in Kathmandu</span></p>
         <h1 class="hero-name">
-          <span class="hero-name-line">I build things as a</span>
-          <span class="hero-name-line italic" id="typewriterLine">&nbsp;</span>
+          <span class="split-line" data-text="Backend Developer">Backend Developer</span>
+          <span class="split-line italic" data-text="& AI Enthusiast">& AI Enthusiast</span>
         </h1>
-        <p class="hero-sub">
-          Crafting elegant, scalable systems<br />behind beautiful products.
+        <!-- Morphing signature sentence -->
+        <p class="hero-morph" id="heroMorph" aria-live="polite">
+          <span class="morph-text">I write code that scales.</span>
         </p>
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-          <a href="#" class="btn btn-cv" download aria-label="Download CV">
+          <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
+          <a href="#contact" class="btn btn-ghost magnetic">Get In Touch</a>
+          <a href="#" class="btn btn-cv magnetic" download aria-label="Download CV">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -143,11 +145,7 @@
       </div>
     </div>
 
-    <!-- Scroll cue -->
-    <a href="#skills" class="scroll-cue">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </a>
+
   </section>
 
   <!-- ===== SKILLS ===== -->
@@ -156,56 +154,30 @@
       <div class="section-label">02 · Tech Stack</div>
       <h2 class="section-heading center">Tools I craft with</h2>
 
-      <div class="skills-grid">
-
-        <div class="skill-card" data-delay="0">
-          <div class="skill-icon">⬡</div>
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>NestJS</li>
-            <li>TypeScript</li>
-            <li>REST APIs</li>
-            <li>GraphQL</li>
-          </ul>
-        </div>
-
-        <div class="skill-card" data-delay="100">
-          <div class="skill-icon">◈</div>
-          <h3>Database</h3>
-          <ul>
-            <li>PostgreSQL</li>
-            <li>MySQL</li>
-            <li>TypeORM</li>
-            <li>Redis</li>
-            <li>Prisma</li>
-          </ul>
-        </div>
-
-        <div class="skill-card" data-delay="200">
-          <div class="skill-icon">✧</div>
-          <h3>AI &amp; Tools</h3>
-          <ul>
-            <li>OpenAI APIs</li>
-            <li>Graph Theory</li>
-            <li>Jest Testing</li>
-            <li>Docker</li>
-            <li>Git / CI-CD</li>
-          </ul>
-        </div>
-
-        <div class="skill-card" data-delay="300">
-          <div class="skill-icon">◯</div>
-          <h3>Architecture</h3>
-          <ul>
-            <li>Microservices</li>
-            <li>Clean Architecture</li>
-            <li>DDD Patterns</li>
-            <li>Event-Driven</li>
-            <li>API Design</li>
-          </ul>
-        </div>
-
+      <!-- Flowing skill cloud — organic, not grid -->
+      <div class="skill-cloud" id="skillCloud">
+        <span class="sc-tag sc-lg">Node.js</span>
+        <span class="sc-tag sc-md sc-muted">NestJS</span>
+        <span class="sc-tag sc-xl sc-accent">TypeScript</span>
+        <span class="sc-tag sc-sm sc-muted">REST APIs</span>
+        <span class="sc-tag sc-lg">PostgreSQL</span>
+        <span class="sc-tag sc-md">MySQL</span>
+        <span class="sc-tag sc-sm sc-muted">TypeORM</span>
+        <span class="sc-tag sc-lg sc-accent">NestJS</span>
+        <span class="sc-tag sc-md sc-muted">Redis</span>
+        <span class="sc-tag sc-sm">Prisma</span>
+        <span class="sc-tag sc-xl">Jest</span>
+        <span class="sc-tag sc-md sc-muted">Docker</span>
+        <span class="sc-tag sc-lg sc-accent">Graph Theory</span>
+        <span class="sc-tag sc-sm sc-muted">Git</span>
+        <span class="sc-tag sc-md">OpenAI APIs</span>
+        <span class="sc-tag sc-lg sc-muted">Microservices</span>
+        <span class="sc-tag sc-sm">DDD</span>
+        <span class="sc-tag sc-md sc-accent">Clean Architecture</span>
+        <span class="sc-tag sc-sm sc-muted">CI/CD</span>
+        <span class="sc-tag sc-lg">Arduino</span>
+        <span class="sc-tag sc-md sc-muted">Event-Driven</span>
+        <span class="sc-tag sc-sm">GraphQL</span>
       </div>
 
       <!-- Marquee tech bar -->
@@ -296,7 +268,7 @@
 
       <div class="projects-grid">
 
-        <article class="project-card featured reveal">
+        <article class="project-card featured reveal tilt-card">
           <div class="project-number">01</div>
           <div class="project-content">
             <div class="project-tag">AI · Food Tech</div>
@@ -429,7 +401,7 @@
             <span class="contact-icon">◎</span>
             <div>
               <span class="contact-label">Email</span>
-              <a href="mailto:hello@devportfolio.com" class="contact-value">hello@devportfolio.com</a>
+              <a href="mailto:tinal030110@gmail.com" class="contact-value">tinal030110@gmail.com</a>
             </div>
           </div>
           <div class="contact-item">

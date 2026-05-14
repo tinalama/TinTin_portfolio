@@ -452,38 +452,60 @@ body:hover .cursor {
 }
 
 .hero-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--mauve);
-  margin-bottom: 1.6rem;
-  animation: fadeUp 0.8s ease both;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  overflow: hidden;
 }
 
+.ey-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: wordUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ey-word:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.ey-word:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+.ey-dot {
+  color: var(--pink-300);
+  opacity: 0;
+  animation: fadeIn 0.3s ease 0.7s both;
+}
+
+/* Hero name — word-split lines (JS splits into spans) */
 .hero-name {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 6vw, 5.8rem);
   font-weight: 300;
   line-height: 1.08;
   color: var(--text-dark);
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
+  overflow: hidden;
 }
 
-.hero-name-line {
+.split-line {
   display: block;
-  animation: fadeUp 0.8s ease both;
+  overflow: hidden;
 }
 
-.hero-name-line:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.hero-name-line:nth-child(2) {
-  animation-delay: 0.22s;
-}
-
-.hero-name-line:nth-child(3) {
-  animation-delay: 0.34s;
+/* Each .word inside .split-line gets this via JS */
+.hero-name .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: wordRise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-name .italic {
@@ -491,19 +513,28 @@ body:hover .cursor {
   color: var(--mauve);
 }
 
-.hero-sub {
-  font-size: 0.95rem;
+/* Morphing signature — JS drives transitions after initial fade-in */
+.hero-morph {
+  font-size: 0.92rem;
   color: var(--text-light);
   margin-bottom: 2.4rem;
   line-height: 1.85;
-  animation: fadeUp 0.8s ease 0.44s both;
+  min-height: 1.6em;
+  font-style: italic;
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  /* initial hidden state, revealed by CSS animation once */
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.2s both;
+  /* JS will override transition property after mount */
 }
 
 .hero-btns {
   display: flex;
   gap: 0.9rem;
   flex-wrap: wrap;
-  animation: fadeUp 0.8s ease 0.54s both;
+  opacity: 0;
+  animation: fadeIn 0.7s ease 1.4s both;
 }
 
 /* Right side: photo + badge */
@@ -512,7 +543,28 @@ body:hover .cursor {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: fadeUp 0.9s ease 0.3s both;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+@keyframes wordRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wordUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .about-photo-frame {
@@ -698,121 +750,102 @@ body:hover .cursor {
   color: var(--dusty);
 }
 
-/* Scroll cue sits below the ha-about */
-.scroll-cue {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 1;
-  padding: 1.5rem 0 2.5rem;
-  width: max-content;
-  margin: 0 auto;
-}
 
-.scroll-cue span {
-  font-size: 0.63rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.scroll-line {
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(to bottom, var(--pink-300), transparent);
-  animation: scrollPulse 2.2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scaleY(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scaleY(1.12);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ===================================
-   SKILLS
+   SKILLS — organic tag cloud
 =================================== */
 .skills {
   background: linear-gradient(180deg, var(--ivory) 0%, var(--blush) 100%);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+/* Fluid tag cloud — no grid, pure flex-wrap with intentional gaps */
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 0.75rem;
+  padding: 1rem 0 3.5rem;
+  align-items: center;
 }
 
-.skill-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(212, 121, 154, 0.2);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.6rem;
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  animation: fadeUp 0.6s ease both;
-}
-
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--pink-300);
-}
-
-.skill-icon {
-  font-size: 1.5rem;
-  color: var(--pink-400);
-  margin-bottom: 1rem;
-}
-
-.skill-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-}
-
-.skill-card ul li {
-  font-size: 0.85rem;
+.sc-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--pink-200);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
   color: var(--text-mid);
-  padding: 0.3rem 0;
-  border-bottom: 1px solid rgba(212, 121, 154, 0.1);
+  cursor: default;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+  /* stagger via JS */
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
 }
 
-.skill-card ul li:last-child {
-  border-bottom: none;
+/* Size variants */
+.sc-sm {
+  font-size: 0.72rem;
+  padding: 0.38rem 0.9rem;
 }
 
-/* Marquee */
+.sc-md {
+  font-size: 0.82rem;
+  padding: 0.48rem 1.1rem;
+}
+
+.sc-lg {
+  font-size: 0.95rem;
+  padding: 0.55rem 1.35rem;
+}
+
+.sc-xl {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.6rem;
+  font-weight: 300;
+}
+
+/* Color variants */
+.sc-accent {
+  background: rgba(244, 114, 160, 0.08);
+  border-color: rgba(244, 114, 160, 0.35);
+  color: var(--mauve);
+}
+
+.sc-muted {
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--text-muted);
+  border-color: var(--pink-100);
+}
+
+.sc-tag:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(212, 121, 154, 0.18);
+  border-color: var(--pink-300);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-dark);
+}
+
+.sc-tag.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+/* Marquee ticker */
 .tech-marquee-wrap {
   overflow: hidden;
   padding: 1.2rem 0;
   border-top: 1px solid var(--pink-200);
   border-bottom: 1px solid var(--pink-200);
+  margin-top: 0.5rem;
 }
 
 .tech-marquee {
@@ -824,16 +857,16 @@ body:hover .cursor {
 }
 
 .tech-marquee span {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-light);
 }
 
 .tech-marquee span:nth-child(2n) {
   color: var(--pink-400);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
 }
 
 @keyframes marquee {
@@ -1652,10 +1685,6 @@ body:hover .cursor {
     text-align: center;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1686,15 +1715,6 @@ body:hover .cursor {
 
   .ha-stats {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .skill-card {
-    padding: 1.4rem 1.2rem;
   }
 
   .project-card {
